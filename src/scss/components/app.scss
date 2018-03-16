@@ -52,6 +52,7 @@ input {
           white-space: nowrap;
           height: $input-height;
           width: 72px;
+          font-size: 0.85rem;
           background-color: $gray-lightest;
           background-image: linear-gradient(#fff, $gray-lightest);
           color: rgba($text-color, 0.8);

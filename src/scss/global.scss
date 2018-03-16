@@ -1,3 +1,4 @@
+// Page layout
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -15,10 +16,27 @@ html {
 body {
   background: $body-bg;
   color: $text-color;
+  line-height: 1.4;
 }
 
 .Content {
   padding: 0 1rem;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+// Links
+a {
+  color: $brand-primary;
+  text-decoration: none;
+  transition: color 100ms ease;
+
+  &:hover {
+    color: lighten($brand-primary, 8%);
+  }
 }
 
 // Fonts

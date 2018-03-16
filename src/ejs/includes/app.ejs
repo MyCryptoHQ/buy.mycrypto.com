@@ -126,3 +126,17 @@
 
 <script type="text/javascript" src="./javascripts/currencyconvertor.js"></script>
 <%# control JS end %>
+
+<%# custom JS begin %>
+<script>
+  // Pull address out of query, stick in input
+  (function() {
+    const queryAddr = window.location.href.match(/[?&]address=([0-9a-zA-Z]+)/i)[1];
+    console.log(queryAddr);
+    if (queryAddr) {
+      const addrInput = document.querySelector('.App-address-input');
+      addrInput.value = queryAddr;
+    }
+  })();
+</script>
+<%# custom JS end %>
