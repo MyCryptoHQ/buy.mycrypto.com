@@ -1,0 +1,128 @@
+<%#
+  This is the app as supplied by Simplex. Please don’t edit the following:
+  * Any and all v- attributes, :class, :href must stay the same
+  * Any and all {{templateVar}} must stay the same
+  * id="app"
+  * <form> tag must be a <form> tag
+  * BTC and Fiat inputs, except for class
+  * Fiat dropdown
+  * Captcha
+  * ref="formplaceholder"
+%>
+
+<%# the control %>
+<div id="app" class="AppContainer">
+  <form @submit="sendPaymentRequest" method="POST" class="App">
+
+    <div class="App-amounts">
+      <div class="App-amounts-field">
+        <input
+          class="App-amounts-field-input"
+          step="0.00000001"
+          v-model.number="btc_amount"
+          @input="onBTCAmountChange"
+          required
+        />
+        <div class="App-amounts-field-unit">
+          <button class="App-amounts-field-unit-btn" type="button">
+            BTC
+          </button>
+        </div>
+      </div>
+
+      <div class="App-amounts-field">
+        <input
+          class="App-amounts-field-input"
+          step="0.01"
+          min="50"
+          max="50000"
+          v-model.number="fiat_amount"
+          @input="onAmountChange"
+          required
+        />
+        <div class="App-amounts-field-unit">
+          <button class="App-amounts-field-unit-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ selectedFiatCurrency }}
+          </button>
+          <div class="App-amounts-field-unit-dropdown">
+            <div
+              v-for="currency in supported_currency"
+              :class="selectedFiatCurrency == currency.name? 'dropdown-item disabled' : 'dropdown-item'"
+              @click="changeFiat(currency.name, currency.ratio)"
+            >
+              {{ currency.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="App-address">
+      <input
+        class="App-address-input form-control"
+        type="text"
+        v-model="btcaddress"
+        placeholder="Bitcoin address"
+        required
+      />
+
+      <div class="App-address-extra">
+        <div class="App-address-extra-error" v-show="showAddressError">
+          {{ getAddressError }}
+        </div>
+
+        <div class="App-address-extra-get">
+          <a target="_blank" :href="config.walleturl">Don't have one?</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="App-captcha">
+      <div ref="rehead" :class="showRecaptchaError? 'recaptcha_box_error' : ''">
+        <div
+          :class="config.recaptcha_site_key? 'g-recaptcha' : ''"
+          :data-sitekey="config.recaptcha_site_key"
+        ></div>
+      </div>
+    </div>
+
+    <div class="App-submit">
+      <button type="submit" class="App-submit-btn">
+        Continue
+      </button>
+    </div>
+  </form>
+
+  <div ref="formplaceholder"></div>
+</div>
+<%# the control end %>
+
+<%# control JS %>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="./javascripts/sha256.js"></script>
+<script src="./javascripts/bigint.js"></script>
+<script src="./javascripts/btc_address_validator.js"></script>
+
+<script>
+  var i_lastQuote = {};
+  i_lastQuote.user_id = 'quote.user_id ';
+  i_lastQuote.quote_id = 'quote.quote_id';
+  i_lastQuote.fiat_money = {};
+  i_lastQuote.fiat_money.currency = 'USD';
+  i_lastQuote.fiat_money.amount = 120;
+  i_lastQuote.digital_money = {};
+  i_lastQuote.digital_money.currency = 'BTC';
+  i_lastQuote.digital_money.amount = 0.16911889;
+  i_lastQuote.base_rate = 700;
+
+  var config = {};
+  config.lastQuote = i_lastQuote;
+  config.csrfToken = 'csrfTokenKey';
+  config.recaptcha_site_key= '6LdCLyITAAAAAO7JocwJAmhDYRpKpQHyJqnnMsnT';
+  config.walleturl= 'https://www.simplex.com';
+</script>
+
+<script type="text/javascript" src="./javascripts/currencyconvertor.js"></script>
+<%# control JS end %>

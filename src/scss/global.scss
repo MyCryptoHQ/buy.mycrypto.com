@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #fbfbfb;
+  color: #333;
+}
+
+// Fonts
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Light.woff2') format('woff2'),
+    url('./assets/fonts/Lato-Light.woff') format('woff');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/fonts/Lato-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Lato-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
