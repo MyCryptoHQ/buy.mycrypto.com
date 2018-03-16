@@ -1,5 +1,5 @@
-$header-bleed: 180px;
-$header-spacing: 20px;
+$header-bleed: 8rem;
+$header-spacing: 2rem;
 
 .Header {
   background: url('./assets/images/header-bg.jpg');
@@ -9,7 +9,7 @@ $header-spacing: 20px;
   margin-bottom: -$header-bleed;
   text-align: center;
   color: #FFF;
-  text-shadow: 1px 1px rgba(#333, 0.8);
+  text-shadow: 1px 1px rgba(#333, 0.6);
 
   &-title,
   &-subtitle {
@@ -21,7 +21,7 @@ $header-spacing: 20px;
     max-width: 760px;
     font-size: 2.8rem;
     font-weight: 300;
-    margin-bottom: .5rem;
+    margin-bottom: .75rem;
   }
 
   &-subtitle {

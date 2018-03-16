@@ -42,7 +42,7 @@ module.exports = {
     q: 'I have more questions!',
     a: `
       You can find more help over at the <a href='https://www.simplex.com/faq/'>
-      Simplex FAQ page</a>, including a way to contact support.
+      Simplex FAQ page</a>, including a way to contact their support.
     `
   }]
 }

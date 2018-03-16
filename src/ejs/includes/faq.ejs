@@ -3,7 +3,10 @@
   <div class="FAQ-questions">
     <% for (let i = 0; i < faqs.length; i++) { %>
       <div class="FAQ-questions-question">
-        <h3 class="FAQ-questions-question-title"><%- faqs[i].q %></h3>
+        <h3 class="FAQ-questions-question-title">
+          <%- faqs[i].q %>
+          <span class="FAQ-questions-question-title-arrow">►</span>
+        </h3>
         <p class="FAQ-questions-question-answer"><%- faqs[i].a %></p>
       </div>
     <% } %>

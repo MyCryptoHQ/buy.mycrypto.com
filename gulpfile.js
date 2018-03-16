@@ -12,7 +12,7 @@ gulp.task('scss', () => {
     .pipe(gulp.dest(distDir));
 });
 
-gulp.task('scss:dev', () => {
+gulp.task('scss:dev', ['scss'], () => {
   gulp.watch('./src/**/*.scss', ['scss']);
 });
 
@@ -25,8 +25,11 @@ gulp.task('ejs', () => {
     .pipe(gulp.dest(distDir));
 });
 
-gulp.task('ejs:dev', () => {
-  gulp.watch('./src/**/*.ejs', ['ejs']);
+gulp.task('ejs:dev', ['ejs'], () => {
+  gulp.watch([
+    './src/**/*.ejs',
+    './src/data.js',
+  ], ['ejs']);
 });
 
 // Image assets
@@ -36,7 +39,7 @@ gulp.task('assets', () => {
   }).pipe(gulp.dest(distDir));
 });
 
-gulp.task('assets:dev', () => {
+gulp.task('assets:dev', ['assets'], () => {
   gulp.watch('./src/assets/**/*', ['assets']);
 });
 

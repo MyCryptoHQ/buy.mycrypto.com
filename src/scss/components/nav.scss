@@ -1,13 +1,13 @@
 .Nav {
   display: flex;
   justify-content: space-between;
-  height: 72px;
+  height: 4.5rem;
   padding: 1rem 2rem;
   margin-bottom: 1rem;
 
   &-logo {
     height: 100%;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: opacity 100ms ease;
 
     &:hover {
@@ -16,6 +16,8 @@
 
     &-img {
       height: 100%;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,.12))
+              drop-shadow(1px 1px 0 rgba(0,0,0,.12));
     }
   }
 }
