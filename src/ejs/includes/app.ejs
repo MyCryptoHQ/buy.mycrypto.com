@@ -47,7 +47,7 @@
           <div class="App-amounts-field-unit-dropdown">
             <div
               v-for="currency in supported_currency"
-              :class="selectedFiatCurrency == currency.name? 'dropdown-item disabled' : 'dropdown-item'"
+              :class="selectedFiatCurrency == currency.name? 'App-amounts-field-unit-dropdown-item is-disabled' : 'App-amounts-field-unit-dropdown-item'"
               @click="changeFiat(currency.name, currency.ratio)"
             >
               {{ currency.name }}
@@ -101,6 +101,7 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 <script src="./javascripts/sha256.js"></script>
 <script src="./javascripts/bigint.js"></script>
 <script src="./javascripts/btc_address_validator.js"></script>
@@ -131,11 +132,10 @@
 <script>
   // Pull address out of query, stick in input
   (function() {
-    const queryAddr = window.location.href.match(/[?&]address=([0-9a-zA-Z]+)/i)[1];
-    console.log(queryAddr);
-    if (queryAddr) {
+    const queryMatches = window.location.href.match(/[?&]address=([0-9a-zA-Z]+)/i);
+    if (queryMatches && queryMatches[1]) {
       const addrInput = document.querySelector('.App-address-input');
-      addrInput.value = queryAddr;
+      addrInput.value = queryMatches[1];
     }
   })();
 </script>

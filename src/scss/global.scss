@@ -30,12 +30,13 @@ h1, h2, h3, h4, h5, h6 {
 
 // Links
 a {
-  color: $brand-primary;
+  color: $link-color;
   text-decoration: none;
   transition: color 100ms ease;
+  cursor: pointer;
 
   &:hover {
-    color: lighten($brand-primary, 8%);
+    color: $link-color-hover;
   }
 }
 

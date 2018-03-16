@@ -15,6 +15,8 @@ $brand-danger: #db5846;
 
 $body-bg: #fbfbfb;
 $text-color: $gray-dark;
+$link-color: $brand-primary;
+$link-color-hover: lighten($brand-primary, 8%);
 
 $container-shadow: 0 1px rgba(#000, .1), 0 1px 4px rgba(#000, .12);
 
