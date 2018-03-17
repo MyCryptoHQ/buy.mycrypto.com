@@ -1,0 +1,33 @@
+$header-bleed: 8rem;
+$header-spacing: 2rem;
+
+.Header {
+  background: url('./assets/images/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: $header-bleed + $header-spacing;
+  margin-bottom: -$header-bleed;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 1px 1px rgba(#333, 0.6);
+
+  &-title,
+  &-subtitle {
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &-title {
+    max-width: 760px;
+    font-size: 2.8rem;
+    margin-bottom: .75rem;
+  }
+
+  &-subtitle {
+    max-width: 600px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #fbfbfb;
+    opacity: 0.75;
+  }
+}

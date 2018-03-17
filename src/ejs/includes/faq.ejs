@@ -1,0 +1,29 @@
+<div class="FAQ">
+  <h2 class="FAQ-title">Frequently Asked Questions</h2>
+  <div class="FAQ-questions">
+    <% for (let i = 0; i < faqs.length; i++) { %>
+      <div class="FAQ-questions-question">
+        <h3 class="FAQ-questions-question-title">
+          <%- faqs[i].q %>
+          <span class="FAQ-questions-question-title-arrow">►</span>
+        </h3>
+        <p class="FAQ-questions-question-answer"><%- faqs[i].a %></p>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const qTitles = document.querySelectorAll('.FAQ-questions-question-title');
+
+    for (let i = 0; i < qTitles.length; i++) {
+      const qTitle = qTitles[i];
+      const qContainer = qTitle.parentNode;
+
+      qTitle.addEventListener('click', function() {
+        qContainer.classList.toggle('is-open');
+      });
+    }
+  })();
+</script>

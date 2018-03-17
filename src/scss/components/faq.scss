@@ -1,0 +1,58 @@
+$faq-q-radius: 4px;
+
+.FAQ {
+  display: block;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+  padding: 1.5rem 1rem;
+  background: #FFF;
+  box-shadow: $container-shadow;
+  border-radius: 3px;
+
+  &-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: .75rem;
+  }
+
+  &-questions {
+    &-question {
+      &-title,
+      &-answer {
+        padding: .75rem 1rem;
+        margin: 0;
+      }
+
+      &-title {
+        font-size: 1.15rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $brand-primary;
+        }
+
+        &-arrow {
+          display: inline-block;
+          font-size: .9rem;
+          transition: 100ms transform ease;
+          opacity: 0.5;
+
+          .is-open & {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      &-answer {
+        display: none;
+        opacity: 0.95;
+        padding-top: 0;
+        padding-bottom: 1rem;
+
+        .is-open & {
+          display: block;
+        }
+      }
+    }
+  }
+}

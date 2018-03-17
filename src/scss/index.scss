@@ -1,0 +1,16 @@
+// CSS Reset
+@import '../../node_modules/css-reset/reset';
+
+// Global styles
+@import './variables';
+@import './global';
+
+// Components
+@import './components/header';
+@import './components/nav';
+@import './components/footer';
+@import './components/app';
+@import './components/faq';
+
+// Pages
+@import './pages/success';
