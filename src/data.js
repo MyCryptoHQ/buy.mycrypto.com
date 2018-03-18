@@ -4,7 +4,7 @@ module.exports = {
     q: 'What is this?',
     a: `
       This is a service that allows you to buy cryptocurrency assets without the
-      need for a exchange in just a few minutes.
+      need for an exchange in just a few minutes.
     `
   }, {
     q: 'Who provides this service?',
