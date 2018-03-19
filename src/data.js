@@ -3,7 +3,7 @@ module.exports = {
   faqs: [{
     q: 'What is this?',
     a: `
-      This is a service to allow you to buy cryptocurrency assets without the
+      This is a service that allows you to buy cryptocurrency assets without the
       need for an exchange in just a few minutes.
     `
   }, {
@@ -14,7 +14,7 @@ module.exports = {
     `
   }, {
     q: 'Are there any fees?',
-    a: 'There is a Simplex fee of 5% ($10 minimum) and a 2% tip to MyCrypto.'
+    a: 'There is a Simplex fee of 5% or $10 (whichever is higher) and an additional 3% tip to MyCrypto.'
   }, {
     q: 'How long does a transaction take?',
     a: `
@@ -42,7 +42,7 @@ module.exports = {
     q: 'I have more questions!',
     a: `
       You can find more help over at the <a href='https://www.simplex.com/faq/'>
-      Simplex FAQ page</a>, including a way to contact their support.
+      Simplex FAQ page</a>, including an avenue to contact their support.
     `
   }]
 }
